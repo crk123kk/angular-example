@@ -1,5 +1,6 @@
-==============ng-cli====================
-#angular-base-eject
+#==============ng-cli==============
+
+##ngular-base-eject
 
 angular-cli脚手架搭建，并且执行了ng eject
 
