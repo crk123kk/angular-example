@@ -39,7 +39,7 @@ angluar-cli脚手架搭建，使用ngrx创建的计数器
 
 ## angular-universal
 
-### angular服务器渲染实例
+### angular-universal
 
 angular-universal实现服务器渲染
 
