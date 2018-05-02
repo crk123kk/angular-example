@@ -1,0 +1,66 @@
+
+<section class="todoapp">
+    <!-- header -->
+    <header class="header">
+      <h1>todos</h1>
+      <input 
+        class="new-todo"
+        autofocus
+        autocomplete="off"
+        placeholder="What needs to be done?"
+        [(ngModel)] = "fillTodo"
+        (keyup.enter)="addTodo(fillTodo)"
+      >
+    </header>
+    <!-- main section -->
+    <section class="main" *ngIf="(((todoList | async | todosStatusPipe:'done':'all')?.length) > 0)">
+      <input class="toggle-all" id="toggle-all"
+        type="checkbox"
+        #checkAllBox
+        [checked]= "!(((todoList | async | todosStatusPipe:'done':'active')?.length) !== 0)"
+        (click)="toggleAllTodo(checkAllBox)"
+      >
+      <label for="toggle-all"></label>
+      <ul class="todo-list">
+        <li class="todo" *ngFor="let todo of (todoList | async | todosStatusPipe:'done':selectFilter)" [ngClass]="{'completed' : todo.done,'editing' : todo.editing}">
+          <div class="view">
+            <input class="toggle"
+              type="checkbox"
+              [checked] = "todo.done"
+              (click)="editTodoStatus(todo)"
+             >
+            <label (dblclick)="editTodoEditing(todo)">{{todo.text}}</label>
+            <button class="destroy" (click)="deleteTodo(todo)"></button>
+          </div>
+          <input 
+            class="edit"
+            [(ngModel)] = "todo.editText"
+            (keyup.enter)="editTodoText(todo)"
+            (blur)="editTodoText(todo)"
+            (keyup.esc)="cancleEdit()"
+          >
+        </li>
+      </ul>
+    </section>
+    <!-- footer -->
+    <footer class="footer" *ngIf="(((todoList | async | todosStatusPipe:'done':'all')?.length) > 0)">
+        <span class="todo-count">
+            <strong>{{(todoList | async | todosStatusPipe:'done':'active')?.length}}</strong>
+            {{(todoList | async | todosStatusPipe:'done':'active')?.length | countNumPipe:'item'}} left
+          </span>
+          <ul class="filters">
+            <li *ngFor="let filter of filters">
+              <a [ngClass]="selectFilter == filter ? 'selected' : ''" (click)="choseFilter(filter)">
+                {{filter}}
+              </a>
+            </li>
+          </ul>
+          <button 
+            *ngIf="(((todoList | async | todosStatusPipe:'done':'completed')?.length) > 0)"
+            class="clear-completed"
+            (click)="clearComplateList()"
+          >
+            Clear completed
+          </button>
+    </footer>
+  </section>

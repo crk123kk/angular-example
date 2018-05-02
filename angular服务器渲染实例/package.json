@@ -1,0 +1,77 @@
+{
+	"name": "ng-universal-starter",
+	"version": "1.0.0",
+	"license": "MIT",
+	"keywords": [
+		"angular",
+		"universal",
+		"ssr",
+		"laixiangran"
+	],
+	"homepage": "https://github.com/laixiangran/angular-universal-starter#readme",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/laixiangran/angular-universal-starter.git"
+	},
+	"author": {
+		"name": "赖祥燃",
+		"email": "laixiangran@163.com",
+		"bolg": "http://www.cnblogs.com/laixiangran",
+		"homepage": "http://www.laixiangran.cn"
+	},
+	"bugs": {
+		"url": "https://github.com/laixiangran/angular-universal-starter/issues"
+	},
+	"scripts": {
+		"ng": "ng",
+		"start": "ng serve -o",
+		"ssr": "npm run build:ssr && npm run serve:ssr",
+		"prerender": "npm run build:prerender && npm run serve:prerender",
+		"build": "ng build",
+		"lint": "ng lint --fix",
+		"build:client-and-server-bundles": "ng build --prod && ng build --prod --app 1 --output-hashing=false",
+		"build:prerender": "npm run build:client-and-server-bundles && npm run webpack:server && npm run generate:prerender",
+		"build:ssr": "npm run build:client-and-server-bundles && npm run webpack:server",
+		"generate:prerender": "cd dist && node prerender",
+		"webpack:server": "webpack --config webpack.server.config.js --progress --colors",
+		"serve:prerender": "cd dist/browser && http-server",
+		"serve:ssr": "node dist/server"
+	},
+	"pre-commit": [
+		"lint"
+	],
+	"private": true,
+	"dependencies": {
+		"@angular/animations": "^5.0.0",
+		"@angular/common": "^5.0.0",
+		"@angular/compiler": "^5.0.0",
+		"@angular/core": "^5.0.0",
+		"@angular/forms": "^5.0.0",
+		"@angular/http": "^5.0.0",
+		"@angular/platform-browser": "^5.0.0",
+		"@angular/platform-browser-dynamic": "^5.0.0",
+		"@angular/platform-server": "^5.0.0",
+		"@angular/router": "^5.0.0",
+		"@nguniversal/common": "^5.0.0-beta.5",
+		"@nguniversal/express-engine": "^5.0.0-beta.5",
+		"@nguniversal/module-map-ngfactory-loader": "^5.0.0-beta.5",
+		"express": "^4.15.2",
+		"core-js": "^2.4.1",
+		"rxjs": "^5.5.2",
+		"zone.js": "^0.8.14"
+	},
+	"devDependencies": {
+		"@angular/cli": "^1.5.0",
+		"@angular/compiler-cli": "^5.0.0",
+		"@angular/language-service": "^5.0.0",
+		"@types/node": "^8.0.30",
+		"codelyzer": "^4.0.2",
+		"cpy-cli": "^1.0.1",
+		"http-server": "^0.10.0",
+		"pre-commit": "^1.2.2",
+		"reflect-metadata": "^0.1.10",
+		"ts-loader": "^2.3.7",
+		"tslint": "^5.7.0",
+		"typescript": "~2.4.2"
+	}
+}
