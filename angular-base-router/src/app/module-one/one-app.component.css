@@ -1,0 +1,17 @@
+ul{
+    list-style: none;
+}
+
+ul li {
+    border: 1px solid rosybrown;
+    padding: 5px;
+    cursor: pointer;
+}
+
+ul li:hover{
+    background: rgb(174, 174, 204);
+}
+
+.router-content{
+    text-align: center;
+}
