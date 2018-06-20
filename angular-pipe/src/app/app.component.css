@@ -1,0 +1,27 @@
+.content {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+.content label {
+    display: inline-block;
+    width: 110px;
+    padding: 5px 0;
+    font-weight: bold;
+}
+
+.title {
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.button {
+    padding: 7px 15px;
+    display: inline-block;
+    background: teal;
+    border-radius: 5px;
+    color: #fff;
+    margin: 5px;
+}

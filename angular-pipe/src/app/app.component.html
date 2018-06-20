@@ -1,0 +1,32 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <span class="button" (click)="show('DatePipe')">日期管道：DatePipe</span>
+  <span class="button" (click)="show('JsonPipe')">Json管道：JsonPipe</span>
+  <span class="button" (click)="show('UpperCasePipe')">大写管道：UpperCasePipe</span>
+  <span class="button" (click)="show('LowerCasePipe')">小写管道：LowerCasePipe</span>
+  <span class="button" (click)="show('TitleCasePipe')">标题管道：TitleCasePipe</span>
+  <span class="button" (click)="show('DecimalPipe')">数值管道：DecimalPipe</span>
+  <span class="button" (click)="show('CurrencyPipe')">货币管道：CurrencyPipe</span>
+  <span class="button" (click)="show('PercentPipe')">百分比管道：PercentPipe</span>
+</div>
+<div *ngIf="showContent === 'DatePipe'" class="content">
+  <span class="title">DatePipe:日期管道，纯管道，日期格式化</span><br><br>
+  <label>正常：</label><span>{{myDataDate }}</span><br>
+  <label>无管道参数：</label><span>{{myDataDate | date }}</span><br>
+  <label>MM/dd/yy：</label><span>{{myDataDate | date:"MM/dd/yy" }}</span><br>
+  <label>yyyy-MM：</label><span>{{myDataDate | date:"yyyy-MM" }}</span><br>
+  <label>short：</label><span>{{myDataDate | date:'short' }}</span><br>
+  <label>fullDate：</label><span>{{myDataDate | date:'fullDate' }}</span><br>
+  <label>longDate：</label><span>{{myDataDate | date:'longDate' }}</span><br>
+  <label>mediumDate：</label><span>{{myDataDate | date:'mediumDate' }}</span><br>
+  <label>shortDate：</label><span>{{myDataDate | date:'shortDate' }}</span><br>
+  <label>mediumTime：</label><span>{{myDataDate | date:'mediumTime' }}</span><br>
+  <label>shortTime：</label><span>{{myDataDate | date:'shortTime' }}</span><br>
+</div>
+<div *ngIf="showContent === 'JsonPipe'" class="content">
+    <span class="title">JsonPipe:Json管道，非纯管道，使用JSON.stringify()将对象转成json字符串</span><br><br>
+    <label>正常：</label><span>{{myJson }}</span><br>
+    <label>加管道：</label><span>{{myJson | json}}</span><br>
+    <label>不存在传参</label><br>
+  </div>
+
