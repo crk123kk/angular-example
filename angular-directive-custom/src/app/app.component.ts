@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  info = '';
+  name = 'prefixHighLight';
+  color = 'blue';
+
+  public showSomethin() {
+    this.info += '显示    '
+  }
 }
