@@ -1,0 +1,61 @@
+.directive-main {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    padding: 0 30px 30px;
+}
+.directive-title {
+    text-align: center;
+    padding: 10px;
+}
+
+.directive-title  span {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 13px;
+    cursor: pointer;
+}
+.directive-title  span:hover {
+    background-color: cyan;
+}
+
+.directive-content p{
+    text-align: center;
+}
+
+.directive-content .titile {
+    font-size: 17px;
+    font-weight: bold;
+}
+.directive-content .subTitle {
+    font-size: 15px;
+    font-weight: bold;
+}
+.directive-content .detatilTitle {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+.text-red{
+    color: red;
+}
+.text-blue {
+    color: blue;
+}
+.text-green {
+    color: green;
+}
+.text-bold {
+    font-weight: bold;
+}
+
+.text-big {
+    font-size: 20px;
+}

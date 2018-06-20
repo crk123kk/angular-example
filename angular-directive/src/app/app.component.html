@@ -1,0 +1,97 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h3>hello {{name}}'s directive</h3>
+</div>
+<div class="directive-main">
+
+  <div class="directive-title">
+    <p>
+      <span (click)="showSomething('style')">1、属性指令：ngStyle</span>&nbsp;&nbsp;
+      <span (click)="showSomething('class')">2、结构指令：ngClass</span>&nbsp;&nbsp;
+    </p>
+    <p>
+      <span (click)="showSomething('if')">3、结构指令：if</span>&nbsp;&nbsp;
+      <span (click)="showSomething('for')">4、结构指令：for</span>&nbsp;&nbsp;
+      <span (click)="showSomething('switch')">5、结构指令：switch</span>&nbsp;&nbsp;
+    </p>
+  </div>
+  <div class="directive-content">
+
+    <p class="titile" *ngIf="showWhat==='style' || showWhat==='class'">属性指令(Attribute directive): 用于改变组件的外观或行为</p>
+    <div *ngIf="showWhat==='style'">
+      <p class="subTitle">ngStyle指令： 用于设定给定 DOM 元素的 style 属性</p>
+      <div>
+        <p class="detatilTitle">绑定常量</p>
+        <p [ngStyle]="{'color': 'red'}">[ngStyle]="{{content1}}"</p>
+        <p class="detatilTitle">绑定表达式</p>
+        <p [ngStyle]="{'color': fontColor}">[ngStyle]="{{content2}}"</p>
+        <p [ngStyle]="{'color': getColor(fontColor)}">[ngStyle]="{{content3}}"</p>
+        <p [ngStyle]="{'color': fontColor === 'blue' ? 'blue' : 'red'}">[ngStyle]="{{content4}}"</p>
+      </div>
+    </div>
+    <div *ngIf="showWhat==='style'">
+      <p class="subTitle">[style.property语法]</p>
+      <div>
+        <p class="detatilTitle">绑定常量</p>
+        <p [style.color]="'red'">[style.color]="'red'"</p>
+        <p class="detatilTitle">绑定表达式</p>
+        <p [style.color]="fontColor">[style.color]="fontColor"</p>
+        <p [style.color]="getColor(fontColor)">[style.color]="getColor(fontColor)"</p>
+        <p [style.color]="fontColor === 'blue' ? 'blue' : 'red'">[style.color]="fontColor === 'blue' ? 'blue' : 'red'"</p>
+      </div>
+    </div>
+    <div *ngIf="showWhat==='class'">
+      <p class="subTitle">ngClass指令：用于动态的设定 DOM 元素的 CSS class</p>
+      <div>
+        <p class="detatilTitle">绑定常量</p>
+        <p [ngClass]="'text-red'">[ngClass]="{{text1}}"</p>
+        <p [ngClass]="{'text-red': true}">[ngClass]="{{text1}}"</p>
+        <p class="detatilTitle">绑定表达式</p>
+        <p [ngClass]="{'text-blue': fontColor === 'blue'}">[ngClass]="{{text2}}"</p>
+        <p [ngClass]="getTextColor('text-blue')">[ngClass]="{{text3}}"</p>
+        <p [ngClass]="fontColor === 'blue' ? 'text-blue' : 'text-red'">[ngClass]="{{text4}}"</p>
+        <p class="detatilTitle">绑定多个class</p>
+        <p [ngClass]="{'text-blue': fontColor === 'blue','text-bold': fontBold === 'bold','text-big': fontBig === 'big'}">[ngClass]="{{text5}}"</p>
+      </div>
+    </div>
+
+    <div *ngIf="showWhat==='if'">
+      <p class="detatilTitle">ngIf指令：根据表达式的值，显示或移除元素</p>
+    </div>
+
+    <div *ngIf="showWhat==='for'">
+      <p class="detatilTitle">ngFor指令：使用可迭代的每个项作为模板的上下文来重复模板，类似于 Ng 1.x 中的 ng-repeat 指令</p>
+      <ul>
+        <li *ngFor="let data of testArray">
+          {{data}}
+        </li>
+      </ul>
+    </div>
+
+    <div *ngIf="showWhat==='switch'">
+      <p class="detatilTitle">ngSwitch指令：它包括两个指令，一个属性指令和一个结构指令。它类似于 JavaScript 中的 switch 语句</p>
+      <p>
+        <input type="radio" [name]="'radio1'" (click)="switchRadio('blue')">blue
+        <input type="radio" [name]="'radio1'" (click)="switchRadio('red')">red
+        <input type="radio" [name]="'radio1'" (click)="switchRadio('green')">green
+      </p>
+      <ul [ngSwitch]='radioColor'>
+        <li *ngSwitchCase="'blue'" class='text-blue'>
+          blue
+        </li>
+        <li *ngSwitchCase="'green'" class='text-green'>
+          green
+        </li>
+        <li *ngSwitchDefault class='text-red'>
+          blue
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+</div>
+
+<div style="margin-bottom: 300px;">
+
+</div>
