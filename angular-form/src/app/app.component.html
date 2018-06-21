@@ -1,0 +1,34 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <span class="button" (click)="show('ReactiveForms')">响应式表单</span>
+  <span class="button" (click)="show('ReactiveFormsBuild')">响应式表单FormBuild</span>
+  <span class="button" (click)="show('TemplateDriven')">模板驱动表单</span>
+  <span class="button" (click)="show('DeepDriven')">多层表单</span>
+  <span class="button" (click)="show('DeepDrivenBuild')">多层表单FormBuild</span>
+  <br>
+</div>
+<div *ngIf="showContent === 'ReactiveForms'" class="content">
+  <span class="title">响应式表单</span>
+  <br>
+  <reactive-form></reactive-form>
+</div>
+<div *ngIf="showContent === 'ReactiveFormsBuild'" class="content">
+  <span class="title">响应式表单FormBuild</span>
+  <br>
+  <reactive-formBuild></reactive-formBuild>
+</div>
+<div *ngIf="showContent === 'TemplateDriven'" class="content">
+  <span class="title">模板驱动表单</span>
+  <br>
+  <template-form></template-form>
+</div>
+<div *ngIf="showContent === 'DeepDriven'" class="content">
+  <span class="title">多层表单</span>
+  <br>
+  <deep-form></deep-form>
+</div>
+<div *ngIf="showContent === 'DeepDrivenBuild'" class="content">
+  <span class="title">多层表单FormBuild</span>
+  <br>
+  <deep-form-build></deep-form-build>
+</div>

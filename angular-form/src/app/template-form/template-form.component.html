@@ -1,0 +1,80 @@
+<h3>template Form</h3>
+<form class="form" #templateForm="ngForm">
+  <div class="form-field">
+    <label for="userName">名字：</label>
+    <input name="userName" id="userName" [(ngModel)]='userName1' required minlength="4" #userName="ngModel">
+    <div *ngIf="userName.invalid && (userName.dirty || userName.touched)">
+      <div *ngIf="userName.errors.required">
+        Name is required.
+      </div>
+      <div *ngIf="userName.errors.minlength">
+        Name must be at least 4 characters long.
+      </div>
+    </div>
+  </div>
+  <div class="form-field">
+    <label for="nickName">昵称：</label>
+    <input name="nickName" id="nickName" [(ngModel)]='nickName' validateCrk>
+  </div>
+  <div *ngIf="templateForm.controls.nickName?.errors">
+    <span>nickName必须是crk</span>
+  </div>
+  <div class="form-field">
+    <label for="age">年龄：</label>
+    <input name="age" id="age" [(ngModel)]='age'>
+  </div>
+  <div class="form-field">
+    <label for="password">密码：</label>
+    <input type="password" id="password" name="password" [(ngModel)]='password' validateEqual="againPwd" reverse="true">
+  </div>
+  <div class="form-field">
+    <label for="againPwd">确认密码：</label>
+    <input type="password" id="againPwd" name="againPwd" [(ngModel)]='againPwd' validateEqual="password" reverse="false">
+  </div>
+  <div *ngIf="templateForm.controls.againPwd?.errors">
+    <span>重复密码：{{templateForm.controls.againPwd?.errors | json}}</span>
+  </div>
+  <div class="form-field">
+    <label>性别</label>
+    <label class="subTitle" for="man">男：</label>
+    <input type="radio" name="sex" id="man" value="man" [(ngModel)]='sex'>
+    <label class="subTitle" for="feman">女：</label>
+    <input type="radio" name="sex" id="feman" value="feman" [(ngModel)]='sex'>
+  </div>
+  <div class="form-field">
+    <label>名词</label>
+    <label class="subTitle" for="chinese">语文：</label>
+    <input type="checkbox" name="chinese" id="chinese" checked="noun.chinese" [(ngModel)]='noun.chinese'>
+    <label class="subTitle" for="english">英语：</label>
+    <input type="checkbox" name="english" id="english" checked="noun.english" [(ngModel)]='noun.english'>
+    <label class="subTitle" for="math">数学：</label>
+    <input type="checkbox" name="math" id="math" checked="noun.math" [(ngModel)]='noun.math'>
+    <label class="subTitle" for="run">跑步：</label>
+    <input type="checkbox" name="run" id="run" checked="noun.run" [(ngModel)]='noun.run'>
+    <label class="subTitle" for="walk">走路：</label>
+    <input type="checkbox" name="walk" id="walk" checked="noun.walk" [(ngModel)]='noun.walk'>
+  </div>
+  <div class="form-field">
+    <label for="weather">天气</label>
+    <select id="weather" name="weather" [(ngModel)]='weather'>
+      <option value="sunny">晴天</option>
+      <option value="rain">雨天</option>
+      <option value="overcast">阴天</option>
+      <option value="cloudy">多云</option>
+      <option value="wind">大风</option>
+    </select>
+  </div>
+  <div class="form-field">
+    <label for="tool">工具</label>
+    <select id="tool" name="tool" [(ngModel)]='tool' multiple>
+      <option value="phone">电话</option>
+      <option value="computer">电脑</option>
+      <option value="pen">笔</option>
+      <option value="car">车</option>
+      <option value="house">房子</option>
+    </select>
+  </div>
+  <div class="form-field">
+    <button class="formButton" (click)="submitForm()" [disabled]="!templateForm.form.valid">提交</button>
+  </div>
+</form>

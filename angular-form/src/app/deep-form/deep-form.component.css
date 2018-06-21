@@ -1,0 +1,29 @@
+.form {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.form-field {
+    padding: 10px;
+}
+
+.form-field > label {
+    display: inline-block;
+    width: 100px;
+}
+.form-field > label.subTitle {
+    display: inline-block;
+    width: 50px;
+}
+
+.formButton {
+    background: brown;
+    color: #fff;
+    padding: 5px 20px;
+    display: inline-block;
+    border: 0;
+}
+
+.formButton:disabled {
+    background: gainsboro;
+}

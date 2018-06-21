@@ -1,0 +1,69 @@
+<h3>reactive Form</h3>
+<form class="form" [formGroup]="reactiveForm">
+  <div class="form-field">
+    <label for="userName">名字：</label>
+    <input name="userName" id="userName" formControlName="userName">
+  </div>
+  <div *ngIf="reactiveForm.controls.userName?.errors">
+    <span>{{reactiveForm.controls.userName?.errors | json}}</span>
+  </div>
+  <div class="form-field">
+    <label for="nickName">昵称：</label>
+    <input name="nickName" id="nickName" formControlName="nickName">
+  </div>
+  <div *ngIf="reactiveForm.errors?.validateEqualCrk">
+    <span>昵称必须是crk</span>
+  </div>
+  <div class="form-field">
+    <label for="age">年龄：</label>
+    <input name="age" id="age" formControlName="age">
+  </div>
+  <div class="form-field">
+    <label for="password">密码：</label>
+    <input type="password" id="password" name="password" formControlName="password">
+  </div>
+  <div class="form-field">
+    <label for="againPwd">确认密码：</label>
+    <input type="password" id="againPwd" name="againPwd" formControlName="againPwd">
+  </div>
+  <div *ngIf="reactiveForm.errors?.validateEqual">
+    <span>密码和确认密码需要一致</span>
+  </div>
+  <div class="form-field">
+    <label>性别</label>
+    <label class="subTitle" for="man">男：</label>
+    <input type="radio" name="sex" id="man" value="man" formControlName="sex">
+    <label class="subTitle" for="feman">女：</label>
+    <input type="radio" name="sex" id="feman" value="feman" formControlName="sex">
+  </div>
+  <div class="form-field">
+    <label>名词</label>
+    <label class="subTitle" for="chinese">语文：</label>
+    <input type="checkbox" name="chinese" id="chinese" formControlName="chinese">
+    <label class="subTitle" for="english">英语：</label>
+    <input type="checkbox" name="english" id="english" formControlName="english">
+  </div>
+  <div class="form-field">
+    <label for="weather">天气</label>
+    <select id="weather" name="weather" formControlName="weather">
+      <option value="sunny">晴天</option>
+      <option value="rain">雨天</option>
+      <option value="overcast">阴天</option>
+      <option value="cloudy">多云</option>
+      <option value="wind">大风</option>
+    </select>
+  </div>
+  <div class="form-field">
+    <label for="tool">工具</label>
+    <select id="tool" name="tool" formControlName="tool" multiple>
+      <option value="phone">电话</option>
+      <option value="computer">电脑</option>
+      <option value="pen">笔</option>
+      <option value="car">车</option>
+      <option value="house">房子</option>
+    </select>
+  </div>
+  <div class="form-field">
+    <button class="formButton" (click)="submitForm()">提交</button>
+  </div>
+</form>

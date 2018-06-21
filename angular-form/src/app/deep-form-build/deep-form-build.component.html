@@ -1,0 +1,17 @@
+<h3>deep form</h3>
+<form class="form" [formGroup]="deepForm">
+  <div class="form-field">
+    <label for="userName">名字：</label>
+    <input name="userName" id="userName" formControlName="userName">
+  </div>
+  <div class="form-field">
+    <label for="nickName">昵称：</label>
+    <input name="nickName" id="nickName" formControlName="nickName">
+  </div>
+  <child-field-build
+    [(childForm)] = "deepForm"
+  ></child-field-build>
+  <div class="form-field">
+    <button class="formButton" (click)="submitForm()">提交</button>
+  </div>
+</form>
