@@ -1,9 +1,13 @@
-### angular的基本架构
+### 项目介绍
+关于angular管道的使用
+
 
 ### 启动
 npm install 
 npm run start --4200
 
-### angular-base-eject
+### 知识点包括
+自定义管道
+    exponentialStrength：指数倍增管道
+    sexReform：性别判断管道
 
-angular-cli脚手架搭建，并且执行了ng eject

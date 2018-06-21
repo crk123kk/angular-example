@@ -12,6 +12,18 @@ angular-cli脚手架搭建，没有执行ng eject
 
 angular-cli脚手架搭建，并且执行了ng eject
 
+## ng-directive
+### ng-directive
+关于指令的基本使用,介绍了属性指令、结构指令等指令以及相应的使用方式
+### ng-directive-custom
+关于我写的以及一些收集到的有意思的指令，提供给读者参考
+
+## ng-pipe
+### ng-pipe
+关于一些管道的基本使用，介绍了一些常见管道的使用方式
+### ng-pipe-custom
+关于我写的以及一些收集到的有意思的管道，提供给读者参考
+
 ## ng-router
 
 ### angular-base-router

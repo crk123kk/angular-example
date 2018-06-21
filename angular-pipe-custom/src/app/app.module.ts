@@ -3,11 +3,15 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { ExponentialStrengthPipe } from './share/pipe/exponential-strength.pipe';
+import { SexReformPipe } from './share/pipe/sexReform.pipe';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ExponentialStrengthPipe,
+    SexReformPipe
   ],
   imports: [
     BrowserModule

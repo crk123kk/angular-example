@@ -1,10 +1,31 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div>
+  <span class="button" (click)="show('exponentialStrength')">指数倍增管道：exponentialStrength</span>
+  <span class="button" (click)="show('sexReform')">性别判断：sexReform</span>
 </div>
-<h2>Here are some links to help you start: </h2>
-<img src="../assets/logo.jpg">
-
+<div *ngIf="showContent === 'exponentialStrength'" class="content">
+  <span class="title">exponentialStrength:指数倍增，纯管道，将过滤的数值以指数倍增</span>
+  <br>
+  <label>正常</label>
+  <span>{{myNumber}}</span>
+  <br>
+  <label>加管道</label>
+  <span>{{myNumber | exponentialStrength}}</span>
+  <br>
+  <label>加管道：加参数</label>
+  <span>{{myNumber | exponentialStrength:3}}</span>
+  <br>
+</div>
+<div *ngIf="showContent === 'sexReform'" class="content">
+  <span class="title">sexReform:判断性别，纯管道，判断过滤的值是男的还是女的，返回中文形式的性别类型</span>
+  <br>
+  <label>正常</label>
+  <span>{{mySex}}</span>
+  <br>
+  <label>加管道</label>
+  <span>{{mySex | sexReform}}</span>
+  <br>
+  <label>加管道：加参数</label>
+  <span>{{mySex | sexReform}}</span>
+  <br>
+</div>
