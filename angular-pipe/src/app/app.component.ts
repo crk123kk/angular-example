@@ -10,6 +10,10 @@ export class AppComponent {
   showContent = '';
   myDataDate = new Date();
   myJson = { "name":'kk',"age":'12'};
+  myString = 'happyDayyEsheLlBAy';
+  myNumber = 234.3432;
+  myArray = ['a', 'b', 'c', 'd'];
+  myText = 'abcdefghij';
 
   public show(str) {
     this.showContent = str;
