@@ -1,10 +1,24 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div>
+  <span class="button" (click)="show('pForC')">父组件向子组件传递信息：通过属性</span><br>
+  <span class="button" (click)="show('cForP')">子组件向父组件传递信息：通过事件</span><br>
+  <span class="button" (click)="show('pGetC')">父组件获取子组件的信息：通过调用模板引用变量</span><br>
+  <span class="button" (click)="show('pCService')">父组件和子组件共享信息：通过服务共享信息</span><br>
+  <span class="button" (click)="show('pGetCV')">父组件获取子组件的信息：通过@ViewChild 或@ContentChild</span><br>
+  <br>
 </div>
-<h2>Here are some links to help you start: </h2>
-<img src="../assets/logo.jpg">
-
+<div *ngIf="showContent === 'pForC'" class="content">
+  <app-parent></app-parent>
+</div>
+<div *ngIf="showContent === 'cForP'" class="content">
+  <app-parent2></app-parent2>
+</div>
+<div *ngIf="showContent === 'pGetC'" class="content">
+  <app-parent3></app-parent3>
+</div>
+<div *ngIf="showContent === 'pCService'" class="content">
+  <app-parent4></app-parent4>
+</div>
+<div *ngIf="showContent === 'pGetCV'" class="content">
+  <app-parent5></app-parent5>
+</div>

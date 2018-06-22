@@ -1,0 +1,26 @@
+<div class="parent_div">
+    <p>父组件</p>
+    <div>
+      <label>姓名：</label>
+      <input type="text" [(ngModel)]="user.name">
+    </div>
+    <div>
+      <label>年龄：</label>
+      <input type="text" [(ngModel)]="user.age">
+    </div>
+    <div>
+      <label>电话：</label>
+      <input type="text" [(ngModel)]="user.number">
+      <input type="button" value="传递数据到子组件" (click)="next()">
+    </div>
+  
+    <!---子组件指令 start-->
+    <app-childen [data]="parent_data"></app-childen>
+    <!--此处也可以直接将user传递到子组件-->
+    <!--
+        需要注意的是：父组件向子组件传递数据的时候是通过向子组件的属性赋值而达到传值的目的的，
+        这里通过事件再赋值并不是说明父组件向子组件传递数据是通过事件，这样的理解是不对的
+    -->
+    <!-- <app-childen [data]="user"></app-childen> -->
+    <!---子组件指令 end-->
+  </div>

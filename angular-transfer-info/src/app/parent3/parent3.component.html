@@ -1,0 +1,11 @@
+<div class="parent_div">
+  <p>父组件</p>
+  <p>{{childInfo}}</p>
+  <div>
+    <input type="button" value="调用子组件方法" (click)="chiden.fun1()">
+    <input type="button" value="调用子组件属性" (click)="getChildInfo(chiden.childInfo)">
+  </div>
+  <!---子组件指令 start-->
+  <app-childen3 #chiden></app-childen3>
+  <!---子组件指令 end-->
+</div>

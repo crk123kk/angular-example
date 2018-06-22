@@ -1,0 +1,9 @@
+<div class="parent_div">
+  <p>父组件</p>
+  <div>
+    接收子组件数据：{{parent_name}}
+  </div>
+  <!---子组件指令 start-->
+  <app-childen2 (event)="getData($event)"></app-childen2>
+  <!---子组件指令 end-->
+</div>
