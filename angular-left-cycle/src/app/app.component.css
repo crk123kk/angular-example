@@ -1,0 +1,21 @@
+.button {
+    padding: 7px 15px;
+    display: inline-block;
+    background: teal;
+    border-radius: 5px;
+    color: #fff;
+    margin: 5px;
+}
+
+.content {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+.title {
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 10px;
+}

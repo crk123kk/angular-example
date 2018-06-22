@@ -1,0 +1,10 @@
+<div>
+  <label for="testName"></label>
+  <input id="testName" type="text" [(ngModel)]="testName">
+</div>
+<br><br>
+<button (click)="createOrCreate()">clear or create app-children</button>
+<app-children
+  *ngIf = "ifShow"
+  [data] = testName
+></app-children>
