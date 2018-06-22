@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl } from "@angular/forms";
 
 @Component({
@@ -7,10 +7,13 @@ import { FormGroup, FormControl } from "@angular/forms";
     styleUrls:['/deep-form.component.css']
 })
 
-export class DeepFormComponent {
+export class DeepFormComponent implements OnInit{
     deepForm = null;
 
     constructor(){
+    }
+
+    ngOnInit() {
         this.createForm();
     }
 

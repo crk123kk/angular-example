@@ -1,5 +1,5 @@
-import { Component } from "@angular/core";
-import { FormGroup, FormControl } from "@angular/forms";
+import { Component, OnInit } from "@angular/core";
+import { FormGroup, FormControl, FormBuilder } from "@angular/forms";
 
 @Component({
     selector:"deep-form-build",
@@ -7,17 +7,21 @@ import { FormGroup, FormControl } from "@angular/forms";
     styleUrls:['/deep-form-build.component.css']
 })
 
-export class DeepFormBuildComponent {
+export class DeepFormBuildComponent implements OnInit{
     deepForm = null;
 
-    constructor(){
+    constructor(
+        private fb: FormBuilder
+    ){}
+
+    ngOnInit() {
         this.createForm();
     }
 
     createForm(){
-        this.deepForm = new FormGroup ({
-            userName: new FormControl('crk1'),
-            nickName: new FormControl('crkkk')
+        this.deepForm = this.fb.group({
+            userName: 'crk2',
+            nickName: ['crkkk'],
         });
     }
 

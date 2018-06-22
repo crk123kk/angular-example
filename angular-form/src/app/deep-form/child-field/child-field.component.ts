@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { FormGroup, FormControl } from "@angular/forms";
 
 @Component({
@@ -7,15 +7,18 @@ import { FormGroup, FormControl } from "@angular/forms";
     styleUrls:['/child-field.component.css']
 })
 
-export class ChildFieldComponent {
-    @Input('childForm') childForm:FormGroup;
+export class ChildFieldComponent implements OnInit{
+    @Input('childForm') childFormGroup:FormGroup;
 
     constructor(){
+    }
 
+    ngOnInit() {
+        this.createFrom();
     }
     public createFrom() {
-        this.childForm = new FormGroup ({
-            age: new FormControl('crk1')
-        });
+        this.childFormGroup.addControl(
+            'age', new FormControl('13')
+        );
     }
 }

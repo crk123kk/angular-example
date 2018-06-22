@@ -1,5 +1,5 @@
-import { Component, Input } from "@angular/core";
-import { FormGroup, FormControl } from "@angular/forms";
+import { Component, Input, OnInit } from "@angular/core";
+import { FormGroup, FormControl, FormBuilder } from "@angular/forms";
 
 @Component({
     selector:"child-field-build",
@@ -7,15 +7,21 @@ import { FormGroup, FormControl } from "@angular/forms";
     styleUrls:['/child-field-build.component.css']
 })
 
-export class ChildFieldBuildComponent {
-    @Input('childForm') childForm:FormGroup;
+export class ChildFieldBuildComponent implements OnInit{
+    @Input() childForm:FormGroup;
 
-    constructor(){
-
+    constructor(
+        private fb: FormBuilder
+    ){
+        // this.addFromField();
     }
-    public createFrom() {
-        this.childForm = new FormGroup ({
-            age: new FormControl('crk1')
-        });
+
+    ngOnInit() {
+        this.addFromField();
+    }
+    public addFromField() {
+        this.childForm.addControl(
+            'age' , this.fb.control('12')
+        )
     }
 }
