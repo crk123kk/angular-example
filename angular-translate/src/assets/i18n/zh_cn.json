@@ -1,0 +1,6 @@
+{
+    "welcome":"欢迎使用本应用",
+    "hello":"你好，这个世界",
+    "getName":"你好，我是{{name}}",
+    "getInfo":"我含有的信息有{{info1}},{{info2}}"
+}

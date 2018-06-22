@@ -1,0 +1,27 @@
+ngx-translate
+<hr>
+<h5>用管道翻译</h5>
+<p>原文：{{ welcome }}</p>
+<p>{{welcomeStr}}：{{welcome | translate}}</p>
+<p>原文：{{ hello }}</p>
+<p>{{helloStr}}：{{hello | translate}}</p>
+<p>原文：{{ getName }}</p>
+<p>{{ getNameStr }}：{{getName | translate:param}}</p>
+<p>原文：{{ getInfo }}</p>
+<p>{{ getInfoStr }}：{{getInfo | translate:param3}}</p>
+
+<h5>用指令翻译</h5>
+<p>原文：{{ welcome }}</p>
+<p>{{welcomeStr2}}：<span [translate]="welcome">welcome</span></p>
+<p>原文：{{ hello }}</p>
+<p>{{helloStr2}}：<span [translate]="hello">hello</span></p>
+<p>原文：{{ getName }}</p>
+<p>{{getNameStr2}}：<span [translate]="getName" [translateParams]="{'name':'ggg'}">getName</span></p>
+
+<h5>用服务翻译</h5>
+<p>原文：{{ welcome }}</p>
+<p><span>{{ welcomeTranslate }}</span></p>
+<p>原文：{{ hello }}</p>
+<p><span>{{ helloTranslate }}</span></p>
+<p>原文：{{ getName }}</p>
+<p><span>{{ getNameTranslate }}</span></p>

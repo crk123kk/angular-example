@@ -1,9 +1,10 @@
-### angular的基本架构
+### 项目介绍
+关于angular表单的使用
+
 
 ### 启动
 npm install 
 npm run start --4200
 
-### angular-base-eject
-
-angular-cli脚手架搭建，并且执行了ng eject
+### 知识点包括
+关于声明周期的运行实例

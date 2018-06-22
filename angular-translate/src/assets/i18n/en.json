@@ -1,0 +1,6 @@
+{
+    "welcome":"welcome to this app",
+    "hello":"hello the world",
+    "getName":"hello I am {{name}}",
+    "getInfo":"my message have {{info1}},{{info2}}"
+}
