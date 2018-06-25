@@ -38,6 +38,26 @@ angular-cli脚手架搭建，并且执行了ng eject
 
 路由的预加载
 
+## angular-form
+### angular-form
+angular表单的基本知识——包含响应式表单、模板驱动表单等
+
+## angular-life-cycle
+### angular-life-cycle
+angular的生命周期
+
+## angular-translate
+### angular-translate
+angular的翻译,使用ngx-translate
+
+## angular-transfer-info
+### angular-transfer-info
+angular组件间的信息传递
+
+## angular-animation
+### angular-animation
+angular的动画实现方式
+
 ## ngrx
 
 ### angluar-example-sendMessage
