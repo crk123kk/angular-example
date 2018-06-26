@@ -1,0 +1,9 @@
+<ul [@listAnimation]="mockData.length">
+    <li *ngFor="let data of mockData">
+        <a>{{data.label}}</a>
+    </li>
+</ul>
+
+<button (click)="changeListAnimation()">
+    changeListAnimation
+</button>
