@@ -1,0 +1,92 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <span class="button" (click)="show('example')">原样</span>
+  <span class="button" (click)="show('simple')">简单投射</span>
+  <span class="button" (click)="show('rule')">投射规则</span>
+  <span class="button" (click)="show('point')">针对性投射</span>
+  <span class="button" (click)="show('selectLow')">select针对投射问题</span>
+  <span class="button" (click)="show('ngProjectAs')">ngProjectAs</span>
+  <span class="button" (click)="show('bad')">缺陷</span>
+  <br>
+</div>
+
+<div class="content" *ngIf="showContent === 'example'">
+  <test-ng-content1>
+
+  </test-ng-content1>
+</div>
+
+<div class="content" *ngIf="showContent === 'simple'">
+  <test-ng-content2>
+    我是外部嵌入的内容
+  </test-ng-content2>
+</div>
+
+<div class="content" *ngIf="showContent === 'rule'">
+  <test-ng-content3>
+    我是外部嵌入的内容3
+  </test-ng-content3>
+</div>
+
+<div class="content" *ngIf="showContent === 'point'">
+  <test-ng-content4>
+    开始，我是外部嵌入的内容4，
+    <header>
+      我是外部嵌入的内容，我在header中
+    </header>
+    <div class="demo2">
+      我是外部嵌入的内容，我所在div的class为"demo2"
+    </div>
+    <div name="demo3">
+      我是外部嵌入的内容demo，我所在div的属性name为"demo3"
+    </div>
+    结束
+  </test-ng-content4>
+</div>
+<div class="content" *ngIf="showContent === 'selectLow'">
+  <test-ng-content5>
+    开始，我是外部嵌入的内容5，
+    <div>
+      <header>
+        我是外部嵌入的内容，我在header中
+      </header>
+    </div>
+    <div class="demo2">
+      我是外部嵌入的内容，我所在div的class为"demo2"
+    </div>
+    <div name="demo3">
+      我是外部嵌入的内容demo，我所在div的属性name为"demo3"
+    </div>
+    结束
+  </test-ng-content5>
+</div>
+<div class="content" *ngIf="showContent === 'ngProjectAs'">
+  <test-ng-content6>
+    开始，我是外部嵌入的内容6，
+    <header>
+      我是外部嵌入的内容，我在header中
+    </header>
+    <div class="demo2">
+      我是外部嵌入的内容，我所在div的class为"demo2"
+    </div>
+    <div name="demo3">
+      我是外部嵌入的内容demo，我所在div的属性name为"demo3"
+    </div>
+    结束
+  </test-ng-content6>
+</div>
+<div class="content" *ngIf="showContent === 'bad'">
+  <test-ng-content7>
+    开始，我是外部嵌入的内容7，
+    <header>
+      我是外部嵌入的内容，我在header中
+    </header>
+    <div class="demo2">
+      我是外部嵌入的内容，我所在div的class为"demo2"
+    </div>
+    <div name="demo3">
+      我是外部嵌入的内容demo，我所在div的属性name为"demo3"
+    </div>
+    结束
+  </test-ng-content7>
+</div>

@@ -1,0 +1,16 @@
+.ngContent {
+    padding: 10px;
+    border: 2px solid red;
+}
+
+.content {
+    padding: 10px;
+    margin-top: 10px;
+    line-height: 20px;
+    color: #FFFFFF;
+    background-color: #de7d28;
+}
+
+.blue {
+    background-color: blue;
+}
