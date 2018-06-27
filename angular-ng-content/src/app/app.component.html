@@ -6,7 +6,7 @@
   <span class="button" (click)="show('point')">针对性投射</span>
   <span class="button" (click)="show('selectLow')">select针对投射问题</span>
   <span class="button" (click)="show('ngProjectAs')">ngProjectAs</span>
-  <span class="button" (click)="show('bad')">缺陷</span>
+  <span class="button" (click)="show('useExample')">使用实例</span>
   <br>
 </div>
 
@@ -63,9 +63,11 @@
 <div class="content" *ngIf="showContent === 'ngProjectAs'">
   <test-ng-content6>
     开始，我是外部嵌入的内容6，
-    <header>
-      我是外部嵌入的内容，我在header中
-    </header>
+    <div ngProjectAs="header">
+      <header>
+        我是外部嵌入的内容，我在header中
+      </header>
+    </div>
     <div class="demo2">
       我是外部嵌入的内容，我所在div的class为"demo2"
     </div>
@@ -75,18 +77,12 @@
     结束
   </test-ng-content6>
 </div>
-<div class="content" *ngIf="showContent === 'bad'">
+<div class="content" *ngIf="showContent === 'useExample'">
   <test-ng-content7>
-    开始，我是外部嵌入的内容7，
-    <header>
-      我是外部嵌入的内容，我在header中
-    </header>
-    <div class="demo2">
-      我是外部嵌入的内容，我所在div的class为"demo2"
-    </div>
-    <div name="demo3">
-      我是外部嵌入的内容demo，我所在div的属性name为"demo3"
-    </div>
-    结束
+    <h4>Welcome to Angular World</h4>
+    <h4>Welcome to Angular World</h4>
+    <header>Card Header</header>
+    <div class="card_body">Card Body</div>
+    <footer>Card Footer</footer>
   </test-ng-content7>
 </div>

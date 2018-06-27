@@ -22,3 +22,5 @@
 .green {
     background-color: green;
 }
+
+.border { border: 2px solid #eee; }

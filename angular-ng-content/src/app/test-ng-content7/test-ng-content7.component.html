@@ -1,15 +1,14 @@
-<div class="ngContent">
-  test-ng-content7
-</div>
-<div class="content">
-  <ng-content></ng-content>
-</div>
-<div class="content blue">
-  <ng-content select="header"></ng-content>
-</div>
-<div class="content red">
-  <ng-content select=".demo2"></ng-content>
-</div>
-<div class="content green">
-  <ng-content select="[name=demo3]"></ng-content>
+<div class="border">
+  <p>Greet Component</p>
+  <div style="border: 1px solid #666;margin: 4px;">
+    <div style="border: 1px solid red;margin: 5px;">
+      <ng-content select="header"></ng-content>
+    </div>
+    <div style="border: 1px solid green;margin: 5px;">
+      <ng-content select=".card_body"></ng-content>
+    </div>
+    <div style="border: 1px solid blue;margin: 5px;">
+      <ng-content select="footer"></ng-content>
+    </div>
+  </div>
 </div>
