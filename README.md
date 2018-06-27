@@ -58,6 +58,18 @@ angular组件间的信息传递
 ### angular-animation
 angular的动画实现方式
 
+## angular-dom
+### angular-dom
+angular操作dom的实现方式
+
+## angular-service
+### angular-service
+angular使用http服务获取数据的方式
+
+## angular-ng-content
+### angular-ng-content
+angular使用ng-content从父组件投射到子组件
+
 ## ngrx
 
 ### angluar-example-sendMessage

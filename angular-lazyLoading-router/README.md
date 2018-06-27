@@ -1,9 +1,10 @@
-# angular demo about lazy loading router
+### 项目介绍
+关于angular懒加载路由的使用
 
-# start -- 4200
 
-npm run start
+### 启动
+npm install 
+npm run start --4200
 
-# info
-
+### 知识点包括
 通过loadChildren来加载模块实现懒加载

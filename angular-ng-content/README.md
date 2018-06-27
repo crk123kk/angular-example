@@ -1,9 +1,10 @@
-### angular的基本架构
+### 项目介绍
+关于angular的投射ng-content的使用
+
 
 ### 启动
 npm install 
 npm run start --4200
 
-### angular-base-eject
-
-angular-cli脚手架搭建，并且执行了ng eject
+### 知识点包括
+    使用ng-content可以实现父组件投射内容到子组件

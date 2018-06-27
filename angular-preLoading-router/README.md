@@ -1,10 +1,12 @@
-# angular router about preloading
+### 项目介绍
+关于angular预加载路由的使用
 
-# start --4202
 
-npm run start
+### 启动
+npm install 
+npm run start --4200
 
-# info
+### 知识点包括
 
 关于项目的预加载路由
 
